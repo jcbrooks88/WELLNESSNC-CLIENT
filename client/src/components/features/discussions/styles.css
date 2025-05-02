@@ -1,0 +1,268 @@
+/* Discussions Page Container */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.discussion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px 20px;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.discussions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px 20px;
+  max-width: 800px;
+  width: 100%;
+  margin: 40px auto;
+  border-radius: 12px;
+  gap: 24px;
+}
+
+/* Link Wrapper */
+.discussion-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Individual Discussion Card */
+.discussion-card {
+  background: linear-gradient(135deg, #B06B44 0%, #F5EFE6 100%);
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.2s ease, background 0.3s ease;
+}
+
+.discussion-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+/* Title Styling */
+.discussion-card h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+/* Content Preview */
+.discussion-card p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+/* Keywords Section */
+.discussion-keywords {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #10b981;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.discussion-keywords::before {
+  content: "🏷️"; /* Tag icon */
+  font-size: 1.1rem;
+}
+
+/* Posted By Section */
+.discussion-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.discussion-author::before {
+  content: "👤"; /* User icon */
+  font-size: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .discussion-card {
+    padding: 20px;
+  }
+
+  .discussion-card h2 {
+    font-size: 1.25rem;
+  }
+
+  .discussion-card p,
+  .discussion-keywords,
+  .discussion-author {
+    font-size: 0.95rem;
+  }
+}
+
+/* General container polish */
+.discussions-form-container {
+  padding: 32px;
+  max-width: 750px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border: 1px solid var(--color-tertiary); /* Soft green border */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(61, 90, 64, 0.15); /* Softer greenish shadow */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.discussions-form-container:hover {
+  box-shadow: 0 8px 20px rgba(61, 90, 64, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Form structure */
+.discussions-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input + Textarea Styling */
+.discussions-input,
+.discussions-textarea,
+.keyword-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 1px solid #cbd5c0; /* Softer border color */
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.discussions-input:focus,
+.discussions-textarea:focus,
+.keyword-input:focus {
+  border-color: var(--color-accent); /* Terracotta B06B44 */
+  box-shadow: 0 0 0 3px rgba(176, 107, 68, 0.25);
+  outline: none;
+}
+
+.discussions-input {
+  height: 50px;
+}
+
+.discussions-textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+/* Button styling */
+.discussions-button {
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.discussions-button:hover {
+  background: linear-gradient(135deg, var(--color-tertiary), var(--color-accent));
+  transform: translateY(-2px);
+}
+
+.discussions-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Keyword Section */
+.keyword-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background-color: #f1f5f4;
+  border: 1px solid var(--color-secondary);
+  border-radius: 12px;
+}
+
+.keyword-container p {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Keyword checkboxes look like pill tags */
+.keyword-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px;
+  padding: 8px 14px;
+  background-color: #e7f0e6;
+  border: 1px solid var(--color-tertiary);
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.keyword-label:hover {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Hide ugly default checkbox */
+.keyword-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-primary);
+  border-radius: 4px;
+  background-color: white;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+.keyword-checkbox:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.keyword-checkbox:checked::after {
+  content: "✔";
+  color: white;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+  line-height: 18px;
+}
+
+/* Error message */
+.error-message {
+  color: #dc2626; /* Keep red for errors */
+  font-size: 0.95rem;
+  margin-top: 10px;
+  font-weight: 500;
+  text-align: center;
+}
