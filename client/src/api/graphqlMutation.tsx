@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { DocumentNode } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql', 
+  uri: import.meta.env.VITE_GRAPHQL_URI, 
   cache: new InMemoryCache(),
 });
 
