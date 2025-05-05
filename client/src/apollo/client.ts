@@ -21,8 +21,8 @@ const authLink = setContext((_, { headers }) => {
 
 // Export a factory function to create the Apollo Client
 export const createApolloClient = () =>
-  console.log("GRAPHQL URI:", import.meta.env.VITE_GRAPHQL_URI);
   new ApolloClient({
     link: ApolloLink.from([authLink, httpLink]),
     cache: new InMemoryCache(),
   });
+
